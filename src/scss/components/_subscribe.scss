@@ -1,0 +1,114 @@
+.section-subscribe {
+  .container {
+    &-subscribe {
+      @include flex(column, null, center);
+
+      .wrapper {
+        @include flex(column, center, center);
+        gap: 60px;
+        border-radius: 40px;
+        background: radial-gradient(272.85% 256.21% at 36.07% 79.59%, rgba(7, 23, 77, 0.60) 0%, rgba(12, 40, 139, 0.60) 100%);
+        padding: 90px 100px;
+        position: relative;
+
+        @include responsive(md) {
+          padding: 35px 50px;
+          gap: 30px;
+        }
+
+        @include responsive(sm) {
+          padding-inline: 35px;
+          gap: 24px;
+        }
+
+        .decoration-left {
+          max-width: 29px;
+          position: absolute;
+          top: 47px;
+          left: 313px;
+
+          @include responsive(xl) {
+            max-width: 24px;
+            left: 210px;
+          }
+
+          @include responsive(md) {
+            max-width: 18px;
+            left: 148px;
+            top: 20px;
+          }
+
+          @include responsive(sm) {
+            left: 36px;
+          }
+        }
+
+        .decoration-right {
+          max-width: 23px;
+          position: absolute;
+          top: 98px;
+          right: 313px;
+
+          @include responsive(xl) {
+            max-width: 18px;
+            right: 224px;
+          }
+
+          @include responsive(md) {
+            max-width: 16px;
+            right: 132px;
+            top: 46px;
+          }
+
+          @include responsive(sm) {
+            right: 83px;
+            top: 74px;
+          }
+        }
+      }
+
+      .content {
+        &-top {
+          @include flex(column, center, center);
+          gap: 30px;
+          text-align: center;
+        }
+
+        &-bottom {
+          @include responsive(md) {
+            width: 100%;
+          }
+
+          form {
+            @include flex(row, center, center);
+            gap: 15px;
+
+            @include responsive(sm) {
+              flex-direction: column;
+            }
+
+            input[type=email] {
+              width: 498px;
+              border-radius: 100px;
+              border: 1.5px solid rgba(255, 255, 255, 0.10);
+              background: rgba(255, 255, 255, 0.08);
+
+              color: rgba(183, 183, 183, 0.60);
+              font-family: $font-display;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 150%;
+              /* 27px */
+              padding: 14px 30px;
+
+              @include responsive(md) {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

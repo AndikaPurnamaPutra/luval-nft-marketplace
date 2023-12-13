@@ -1,0 +1,152 @@
+.navbar {
+  background-color: $black;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  .container {
+    &-navbar {
+      @include flex(row, center, space-between);
+      padding-block: 20px;
+      position: relative;
+
+      .nav {
+        &-logo {
+          display: inline-flex;
+          max-width: 113px;
+
+          @include responsive(md) {
+            max-width: 80px;
+          }
+        }
+
+        &-menu {
+          @include responsive(xl) {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            @include flex(column, null, flex-start);
+            gap: 30px;
+            padding-inline: 20px;
+            background-color: $black;
+            height: 0;
+            overflow: hidden;
+            transition: all 400ms ease;
+          }
+
+          &.active {
+            height: 100vh;
+            padding-block: 40px;
+            .nav-menu {
+              &-list, &-wrap {
+                visibility: visible;
+              }
+            }
+          }
+
+          &-list {
+            @include flex(row, center, flex-start);
+            gap: 30px;
+
+            @include responsive(xl) {
+              @include flex(column, flex-start, flex-start);
+              visibility: hidden;
+              transition: all 400ms ease;
+            }
+          }
+
+          &-wrap {
+            @include responsive(xl) {
+              visibility: hidden;
+              transition: all 300ms ease;
+            }
+            &.mobile {
+              display: none;
+
+              @include responsive(xl) {
+                @include flex(column, null, space-between);
+                gap: 30px;
+              }
+            }
+
+            &.desktop {
+              @include flex(row, center, space-between);
+              gap: 30px;
+
+              @include responsive(xl) {
+                display: none;
+              }
+            }
+
+            .wrap {
+              &-input {
+                @include flex(row, center, space-between);
+                width: 365px;
+                border-radius: 100px;
+                border: 1.5px solid #676767;
+                background-color: transparent;
+                padding: 12px 24px;
+
+                @include responsive(xl) {
+                  width: 100%;
+                }
+
+                input {
+                  color: #676767;
+                  font-family: $font-display;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  background-color: transparent;
+                  width: 100%;
+                  border: none;
+
+                  &:focus {
+                    outline: none;
+                  }
+                }
+
+                a {
+                  display: inline-flex;
+
+                  img {
+                    max-width: 24px;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-btn-responsive {
+          display: none;
+          background-image: url("../../../assets/image/menu.svg");
+          background-repeat: no-repeat;
+          background-size: 24px 24px;
+          width: 24px;
+          height: 24px;
+          border: transparent;
+          background-color: transparent;
+
+          @include responsive(xl) {
+            display: block;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.cross {
+  background-image: url("../../../assets/image/cross-white.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,208 @@
+.section-header {
+  padding-block: 100px;
+
+  @include responsive(md) {
+    padding-block: 50px;
+  }
+
+  .container {
+    &-header {
+      flex-direction: column;
+      position: relative;
+
+      .subtext {
+        &-text {
+          @include flex(column, center, center);
+
+          &-display {
+            span {
+              display: inline-flex;
+              vertical-align: bottom;
+            }
+          }
+
+          &-desc {
+            max-width: 468px;
+
+            @include responsive(xl) {
+              max-width: 432px;
+            }
+
+            @include responsive(md) {
+              max-width: 378px;
+            }
+
+            @include responsive(sm) {
+              text-align: center;
+            }
+          }
+
+          .decoration-text-top {
+            img {
+              max-width: 117px;
+
+              @include responsive(xl) {
+                max-width: 98px;
+              }
+
+              @include responsive(md) {
+                max-width: 72px;
+              }
+
+              @include responsive(sm) {
+                max-width: 40px;
+              }
+            }
+          }
+
+          .decoration-text-center {
+            img {
+              max-width: 179px;
+
+              @include responsive(xl) {
+                max-width: 152px;
+              }
+
+              @include responsive(md) {
+                max-width: 110px;
+              }
+
+              @include responsive(sm) {
+                max-width: 56px;
+              }
+            }
+          }
+
+          .decoration-bottom {
+            max-width: 129px;
+            animation: rotate-animation 8s infinite linear;
+
+            @include responsive(xl) {
+              max-width: 98px;
+            }
+
+            @include responsive(md) {
+              max-width: 78px;
+            }
+
+            @include responsive(sm) {
+              max-width: 52px;
+            }
+          }
+
+          .wrap {
+            @include flex(row, center, center);
+            gap: 30px;
+
+            @include responsive(xl) {
+              gap: 20px;
+            }
+
+            @include responsive(sm) {
+              flex-direction: column-reverse;
+            }
+          }
+        }
+      }
+
+      .decoration-left-center {
+        max-width: 35px;
+        position: absolute;
+        left: 207px;
+        top: 180px;
+
+        @include responsive(xl) {
+          max-width: 24px;
+          left: 130px;
+          top: 145px;
+        }
+
+        @include responsive(md) {
+          max-width: 20px;
+          left: 92px;
+          top: 104px;
+        }
+
+        @include responsive(sm) {
+          max-width: 16px;
+          left: 34px;
+          top: 55px;
+        }
+      }
+
+      .decoration-star-left-top {
+        max-width: 20px;
+        position: absolute;
+        left: 434px;
+        top: 0;
+
+        @include responsive(xl) {
+          left: 290px;
+        }
+
+        @include responsive(md) {
+          max-width: 16px;
+          left: 217px;
+        }
+
+        @include responsive(sm) {
+          left: 100px;
+        }
+      }
+
+      .decoration-star-top-center {
+        max-width: 30px;
+        position: absolute;
+        top: -46px;
+        right: 579px;
+
+        @include responsive(xl) {
+          max-width: 20px;
+          right: 404px;
+        }
+
+        @include responsive(md) {
+          max-width: 18px;
+          right: 304px;
+        }
+
+        @include responsive(sm) {
+          max-width: 16px;
+          right: 136px;
+        }
+      }
+
+      .decoration-star-right-bottom {
+        max-width: 25px;
+        position: absolute;
+        bottom: 0;
+        right: 200px;
+
+        @include responsive(xl) {
+          max-width: 20px;
+          right: 80px;
+        }
+
+        @include responsive(md) {
+          max-width: 16px;
+          right: 38px;
+        }
+
+        @include responsive(sm) {
+          top: 108px;
+          right: 108px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

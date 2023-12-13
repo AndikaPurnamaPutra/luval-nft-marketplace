@@ -1,0 +1,73 @@
+.footer {
+  padding-block: 100px;
+
+  @include responsive(md) {
+    padding-block: 50px;
+  }
+
+  .container {
+    &-footer {
+      gap: 130px;
+
+      @include responsive(md) {
+        gap: 60px;
+      }
+
+      @include responsive(sm) {
+        gap: 30px;
+      }
+
+      .content {
+        &-left {
+          @include flex(column, flex-start, flex-start);
+          gap: 30px;
+
+          @include responsive(sm) {
+            gap: 24px;
+          }
+
+          .logo {
+            display: inline-flex;
+            max-width: 114px;
+
+            @include responsive(md) {
+              max-width: 100px;
+            }
+          }
+
+          .desc {
+            max-width: 470px;
+          }
+
+          .social-media {
+            @include flex(row, center, flex-start);
+            gap: 20px;
+          }
+        }
+
+        &-right {
+          @include flex(row, flex-start, space-between);
+          gap: 30px;
+          flex-wrap: wrap;
+
+          @include responsive(sm) {
+            flex-direction: column;
+            gap: 24px;
+          }
+
+          .menu {
+            &-list {
+              width: 170px;
+              @include flex(column, flex-start, flex-start);
+              gap: 16px;
+
+              @include responsive(sm) {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

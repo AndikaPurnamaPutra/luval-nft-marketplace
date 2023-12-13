@@ -1,0 +1,83 @@
+.section-week {
+  padding-block: 100px;
+
+  @include responsive(md) {
+    padding-block: 50px;
+  }
+
+  .container {
+    &-week {
+      flex-direction: column;
+      gap: 60px;
+
+      @include responsive(sm) {
+        gap: 24px;
+      }
+
+      .content {
+        &-top {
+          @include flex(column, center, center);
+          gap: 10px;
+          text-align: center;
+        }
+
+        &-bottom {
+          @include flex(column, null, center);
+          gap: 60px;
+
+          @include responsive(sm) {
+            gap: 30px;
+          }
+
+          .wrapper {
+            &-items {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 30px;
+
+              @include responsive(md) {
+                grid-template-columns: repeat(2, 1fr);
+              }
+
+              @include responsive(md) {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+              }
+
+              .item {
+                padding: 20px;
+                @include flex(row, center, space-between);
+                border-radius: 20px;
+                background: rgba(48, 48, 48, 0.30);
+
+                &-image {
+                  max-width: 70px;
+                }
+
+                &-text {
+                  @include flex(column, flex-start, space-between);
+                  gap: 10px;
+
+                  &-desc {
+                    @include flex(row, null, space-between);
+                    gap: 10px;
+
+                    span {
+                      display: inline-flex;
+                      vertical-align: middle;
+                      max-width: 18px;
+                    }
+                  }
+                }
+              }
+            }
+
+            &-buttons {
+              @include flex(center, center, center);
+            }
+          }
+        }
+      }
+    }
+  }
+}

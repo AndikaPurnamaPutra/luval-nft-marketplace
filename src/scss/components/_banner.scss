@@ -1,0 +1,36 @@
+.section-banner {
+  .container {
+    &-banner {
+      @include flex(column, null, center);
+
+      .subtext {
+        @include flex(column, center, center);
+        gap: 40px;
+        padding: 100px;
+        border-radius: 30px;
+        background: rgba(48, 48, 48, 0.30);
+
+        @include responsive(md) {
+          padding: 50px;
+          gap: 30px;
+        }
+
+        @include responsive(sm) {
+          padding: 25px;
+        }
+
+        &-text {
+          text-align: center;
+          @include flex(column, center, center);
+          gap: 20px;
+        }
+
+        &-buttons {
+          @include responsive(sm) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
